@@ -5,3 +5,17 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+30.times do |n|
+    name  = Faker::Commerce.department
+    price = Faker::Commerce.price
+    description = Faker::Company.catch_phrase
+    slug = Faker::Internet.slug
+    Course.create!(name: name,
+  	      price: price,
+  	      description: description
+  	     )
+    x = ["|","/","-","+","#"]
+    print x.shuffle.sample
+  end
