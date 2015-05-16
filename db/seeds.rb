@@ -9,7 +9,7 @@
 
 5.times do |n|
     name  = "Web Development Immersive"
-    price = "9,000"
+    price = "9000"
     description = "Everything you need to know to be become a professional web developer and launch your own start-up"
     Course.create!(name: name,
   	      price: price,
