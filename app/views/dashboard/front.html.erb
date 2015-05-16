@@ -12,9 +12,9 @@
 </div>
 
 <div style="position: absolute; right: 20px; top: 20px;" class="ui buttons">
-  <div class="ui inverted button">Log In</div>
+  <%= link_to('Log In', new_user_session_path, class: 'ui inverted button' ) %>
   <div class="or"></div>
-  <div class="ui positive button">Sign Up</div>
+  <%= link_to('Sign Up', new_user_registration_path, class: 'ui positive button' ) %>
 </div>
 
 <h1 style="position: absolute; top: 150px; left: 340px; color: white; font-size: 475%;">Become a Developer.</h1>
