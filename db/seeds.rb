@@ -7,15 +7,14 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-30.times do |n|
-    name  = Faker::Commerce.department
-    price = Faker::Commerce.price
-    description = Faker::Company.catch_phrase
-    slug = Faker::Internet.slug
+5.times do |n|
+    name  = "Web Development Immersive"
+    price = "9,000"
+    description = "Everything you need to know to be become a professional web developer and launch your own start-up"
     Course.create!(name: name,
   	      price: price,
   	      description: description
   	     )
     x = ["|","/","-","+","#"]
     print x.shuffle.sample
-  end
+end
