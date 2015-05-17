@@ -17,7 +17,7 @@ class RegistrationsController < ApplicationController
     @registration.user = current_user
 
     respond_to do |format|
-      if @registration.save
+      if @registration.save	
         format.html do
           redirect_to course_path(@course.id), notice: 'Registration created successfully' 
         end
