@@ -29,6 +29,11 @@ class RegistrationsController < ApplicationController
   end
 
 private
+
+	def registration_params
+    params.require(:registration).permit(:user_id, :course_id)
+  end
+
   def load_course
     @course = Course.find(params[:course_id])
   end
