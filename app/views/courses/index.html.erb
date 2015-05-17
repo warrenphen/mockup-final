@@ -40,6 +40,10 @@
     </tr>
   </tbody>
 </table>
+  <%= button_to 'Register Now!', 
+                course_registration_path(@course, :user_id => current_user), 
+                :method => 'post',
+                class: "btn btn-default" %>
     <% end %>
 </div>
 
