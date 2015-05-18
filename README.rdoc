@@ -1,28 +1,29 @@
-== README
-- Dvorkin in the building
-This README would normally document whatever steps are necessary to get the
-application up and running.
+== User Stories	
 
-Things you may want to cover:
+Iteration 1:
 
-* Ruby version
+* Users need to be able to sign up
 
-* System dependencies
+* Users need to be able to select from a number of course options
 
-* Configuration
+* Users need to be able to process payment for selected courses
 
-* Database creation
+* Users need to have a profile page for all the info pertaining to the course
 
-* Database initialization
+* Users will need a link to the google hangout lecture on their profile page
 
-* How to run the test suite
+* User will need a submission page for all the assignments
 
-* Services (job queues, cache servers, search engines, etc.)
+* Users will need access to a progress page with a list of all the students
 
-* Deployment instructions
+* Users will be able to chat with the instructor and the class through a chat messenger
 
-* ...
+* Users will be able to register for private lessons with instructors in the afternoon
 
+* Admin will be able to upload new courses and pricing plans
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Admin can upload new instructors into the system
+
+* Instructors login and have access to the create hangout button, as well as curriculum for the day or week or whole course
+
+* Instructors have access to all the students video windows and chat messenger
