@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   root :to => "dashboard#front"
 
   get '/front', to: 'dashboard#front'
+  get '/tracks', to: 'dashboard#tracks'
 
 end
