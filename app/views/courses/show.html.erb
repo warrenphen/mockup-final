@@ -14,9 +14,16 @@
   <strong>Description:</strong>
   <%= @course.description %>
 </p>
-<%= link_to 'Register Now!', root_path %>
+<%= link_to 'Register Now!', root_path %><br>
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>
 
-<%= instant_hangout topic: 'Rails Course' %>
+<br>
+<div id="placeholder-div1"></div>
+<script>
+  gapi.hangout.render('placeholder-div1', {
+    'render': 'createhangout',
+    'initial_apps': [{'app_id' : '184219133185', 'start_data' : 'dQw4w9WgXcQ', 'app_type' : 'ROOM_APP' }]
+  });
+</script>
 
