@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require google-instant-hangouts
 //= require_tree .
 // Loads all Semantic javascripts
 //= require semantic-ui
