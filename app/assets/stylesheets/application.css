@@ -185,3 +185,10 @@
     max-height: 570px;
   }
 }
+
+@media only screen and (max-width: @computerBreakpoint) {
+  html.ios {
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+}
