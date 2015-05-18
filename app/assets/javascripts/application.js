@@ -14,13 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require semantic-ui
-//= require google-instant-hangouts
 //= require_tree .
 // Loads all Semantic javascripts
-
-
-$(document).ready(function(){
-	$('#menu-button').on('click', function(){
-		$('.demo.sidebar').sidebar('toggle');	
-	});
-});
