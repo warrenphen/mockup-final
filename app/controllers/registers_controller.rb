@@ -3,18 +3,16 @@ class RegistersController < ApplicationController
   end
 
 	def new
-  	@register = Register.new
+  	@course = load_course
+    @register = @course.registers.build
   end
 
   def create
   	load_course
-  
-  	@register = @course.registers.build(reg_params)
-    @register.user = current_user
-    @register.course = @course.id
+    @register = @course.registers.new(course_id: @course.id, user_id: current_user.id)
 
   	if @register.save
-      redirect_to root_path, notice: 'Registration created successfully. Please check your e-mail for confirmation'
+       redirect_to course_path(@course.id), notice: 'Registration created successfully. Please check your e-mail for confirmation'
       # UserMailer.conf_email(current_user).deliver_now
     else
       redirect_to root_path notice: 'Registration failed. Please try again'
@@ -28,9 +26,6 @@ class RegistersController < ApplicationController
   end
 
 private
-  def reg_params
-    params.require(:register).permit(:course_id, :user_id)
-  end
 
   def load_course
     @course = Course.find(params[:course_id])
