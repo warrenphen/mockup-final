@@ -7,7 +7,7 @@ class RegistersController < ApplicationController
   def create
   	load_course
   
-  	@register = @course.registers.build(res_params)
+  	@register = @course.registers.build(reg_params)
     @register.user = current_user
 
   	if @register.save
@@ -25,7 +25,7 @@ class RegistersController < ApplicationController
   end
 
 private
-  def res_params
+  def reg_params
     params.require(:register).permit(:course_id, :user_id)
   end
 
