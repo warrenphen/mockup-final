@@ -13,7 +13,7 @@
   <%= @course.description %>
 </p>
 
-<%= link_to 'Register Now!', new_course_register_path(@course) %><br>
+<%= link_to 'Register Now!', course_registers_path(@course), method: 'POST' %><br>
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>
 
