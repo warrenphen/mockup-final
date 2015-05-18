@@ -11,6 +11,7 @@ class RegistersController < ApplicationController
   
   	@register = @course.registers.build(reg_params)
     @register.user = current_user
+    @register.course = @course.id
 
   	if @register.save
       redirect_to root_path, notice: 'Registration created successfully. Please check your e-mail for confirmation'
