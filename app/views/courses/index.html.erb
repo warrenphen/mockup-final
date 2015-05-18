@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Find Your New Career Today!</h1>
+<%= link_to 'Home', root_path %>
+<%= link_to 'New Course', new_course_path %>
+
 <div class="container">
     <% @courses.each do |course| %>
         <table class="ui celled structured table">
@@ -42,8 +45,4 @@
 </table>
     <% end %>
 </div>
-
 <br>
-
-<%= link_to 'New Course', new_course_path %>
-
