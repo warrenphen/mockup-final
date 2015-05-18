@@ -1,4 +1,6 @@
 class RegistersController < ApplicationController
+  def index
+  end
 
 	def new
   	@register = Register.new
