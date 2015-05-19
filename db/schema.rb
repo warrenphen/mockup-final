@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150519190408) do
+=======
+ActiveRecord::Schema.define(version: 20150519150049) do
+>>>>>>> avery
 
   create_table "courses", force: :cascade do |t|
     t.string   "name"
@@ -22,7 +26,7 @@ ActiveRecord::Schema.define(version: 20150519190408) do
     t.date     "date"
   end
 
-  create_table "registers", force: :cascade do |t|
+  create_table "registrants", force: :cascade do |t|
     t.integer  "course_id"
     t.integer  "user_id"
     t.datetime "created_at", null: false
