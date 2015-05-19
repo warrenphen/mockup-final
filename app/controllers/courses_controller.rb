@@ -11,7 +11,7 @@ class CoursesController < ApplicationController
   # GET /courses/1.json
   def show
     if current_user
-      @registration = @course.registrations.build
+      @register = @course.registers.build
     end
   end
 

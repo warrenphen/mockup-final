@@ -1,20 +1,32 @@
 <p id="notice"><%= notice %></p>
-
+<div style="text-align:center;">
 <p>
   <strong>Name:</strong>
   <%= @course.name %>
 </p>
-
 <p>
   <strong>Price:</strong>
   <%= @course.price %>
 </p>
-
 <p>
   <strong>Description:</strong>
   <%= @course.description %>
 </p>
-<%= link_to 'Register Now!', root_path %>
+
+<%= button_to 'Register Now', 
+        course_registers_path(@course, :register_id => @register.id), 
+        :method => 'post',
+        class: "btn btn-default" %><br>
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>
 
+<br>
+
+<div id="placeholder-div1"></div>
+<script>
+  gapi.hangout.render('placeholder-div1', {
+    'render': 'createhangout',
+    'initial_apps': [{'app_id' : '184219133185', 'start_data' : 'dQw4w9WgXcQ', 'app_type' : 'ROOM_APP' }]
+  });
+</script>
+</div>
