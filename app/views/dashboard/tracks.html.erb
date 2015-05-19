@@ -1,7 +1,7 @@
-<%= render 'index' %>
+<%= render 'left_sidebar' %>
 
 
-<div class="overlay">
+<div class="pusher">
   <div class="ui grid">
   <div class="two wide column"></div>
 
@@ -13,18 +13,33 @@
            <h2 style="text-align: center;">1. Introduction to Web Development</h2>
           </div>
           <div class="content">
-            <a class="header">Stevie Feliciano</a>
-            <div class="meta">
-              <span class="date">Joined in 2014</span>
-            </div>
+            <a class="header">Start Here!</a>
+            
             <div class="description">
-              Stevie Feliciano is a library scientist living in New York City. She likes to spend her time reading, running, and writing.
+              This course will start from zero, answering the basic questions people have about the actual practice and career of web development. You'll gain a much better understanding of what you're about to get into!
             </div>
           </div>
           <div class="extra content">
             <a>
-              <i class="user icon"></i>
-              22 Friends
+              <div class="left-fact">
+              <h4>You Will Learn</h4>
+
+                  <ul>
+                    <li>What a web developer really does</li>
+                    <li>The tools of the trade</li>
+                    <li>How to get hired as a web developer</li>
+                  </ul>
+
+              </div>
+              <div class="right-fact">
+              <h4>You Will Build</h4>
+
+
+                  <ul>
+                    <li>Hold on, you'll be building soon!</li>
+                  </ul> 
+
+                </div>
             </a>
           </div>
         </div>
@@ -194,11 +209,6 @@
 </div>
 </div>  
 
-<script>
-  $('.black.big.launch').on('click', function() {
-    $('.left.sidebar').sidebar('toggle');
-  });
-</script>
 
 
 
