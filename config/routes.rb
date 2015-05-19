@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :courses do
-  	resources :registrants
+  	resources :enrollments
 	end
 
   root :to => "dashboard#front"

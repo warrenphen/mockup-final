@@ -1,17 +1,17 @@
-class RegistrantsController < ApplicationController
+class EnrollmentsController < ApplicationController
   def index
   end
 
 	def new
   	@course = load_course
-    @register = @course.registers.build
+    @enrollment = @course.enrollments.build
   end
 
   def create
   	load_course
-    @register = @course.registers.new(course_id: @course.id, user_id: current_user.id)
+    @enrollment = @course.enrollments.new(course_id: @course.id, user_id: current_user.id)
 
-  	if @register.save
+  	if @enrollment.save
        redirect_to course_path(@course.id), notice: 'Registration created successfully. Please check your e-mail for confirmation'
       # UserMailer.conf_email(current_user).deliver_now
     else

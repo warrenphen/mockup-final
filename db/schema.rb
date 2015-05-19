@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20150519190408) do
     t.date     "date"
   end
 
-  create_table "registrants", force: :cascade do |t|
+  create_table "enrollments", force: :cascade do |t|
     t.integer  "course_id"
     t.integer  "user_id"
     t.datetime "created_at", null: false

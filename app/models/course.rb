@@ -1,4 +1,4 @@
 class Course < ActiveRecord::Base
-	has_many :registrants
-	has_many :users, through: :registrants
+	has_many :enrollments
+	has_many :users, through: :enrollments
 end

@@ -1,6 +1,6 @@
-class CreateRegisters < ActiveRecord::Migration
+class CreateEnrollments < ActiveRecord::Migration
   def change
-    create_table :registers do |t|
+    create_table :enrollments do |t|
       t.integer :course_id
       t.integer :user_id
 
