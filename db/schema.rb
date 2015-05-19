@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150519190408) do
-=======
-ActiveRecord::Schema.define(version: 20150519150049) do
->>>>>>> avery
 
   create_table "courses", force: :cascade do |t|
     t.string   "name"
