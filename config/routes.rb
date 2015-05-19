@@ -2,9 +2,9 @@ Rails.application.routes.draw do
 
 
   devise_for :users
-  
+
   resources :courses do
-  	resources :registers
+  	resources :registrants
 	end
 
   root :to => "dashboard#front"
