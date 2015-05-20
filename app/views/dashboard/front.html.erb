@@ -13,12 +13,17 @@
 	<h1 style="position:absolute;top:200px;left:350px;color:white;font-size:475%;display:block;">
 			Become a Developer.
 	</h1>
-	<div class="ui buttons" style="position:absolute; top:350px;left:545px;display:block;">
-	  <%= link_to('Log In', new_user_session_path, class: 'ui primary button' ) %>
-	  <div class="or"></div>
-	  <%= link_to('Sign Up', new_user_registration_path, class: 'ui positive button' ) %>
-	</div>
-
+	<% if !current_user %>
+		<div class="ui buttons" style="position:absolute; top:350px;left:545px;display:block;">
+		  <%= link_to('Log In', new_user_session_path, class: 'ui primary button' ) %>
+		  <div class="or"></div>
+		  <%= link_to('Sign Up', new_user_registration_path, class: 'ui positive button' ) %>
+		</div>
+	<% else %>
+		<div class="ui buttons" style="position:absolute;top:350px;left:570px;">
+			<%= link_to('View Profile', tracks_path, class: 'ui primary button' ) %>
+		</div>
+	<% end %>
 	<div style="position: absolute; top: 300px; left: 550px;">
 		<%= link_to('Explore Curriculum', courses_path, class: 'ui teal button' ) %>
 	</div>
@@ -41,11 +46,19 @@
 						<li><a href="#feature">About Us</a></li>
 						<li><a href="#contact">Contact</a></li>
 						<li>
-							<div class="ui buttons">
-	  						<%= link_to('Log In', new_user_session_path, class: 'ui primary button' ) %>
-	  						<div class="or" style="top: 12px;"></div>
-	  						<%= link_to('Sign Up', new_user_registration_path, class: 'ui positive button' ) %>
-							</div>
+							<% if !current_user %>
+								<div class="ui buttons">
+		  						<%= link_to('Log In', new_user_session_path, class: 'ui primary button' ) %>
+		  							<div class="or" style="top: 12px;"></div>
+		  						<%= link_to('Sign Up', new_user_registration_path, class: 'ui positive button' ) %>
+								</div>
+							<% else %>
+									<div class="ui buttons">
+		  						<%= link_to('Profile', tracks_path, class: 'ui primary button' ) %>
+		  							<div class="or" style="top: 12px;"></div>
+		  						<%= link_to('Sign Out', destroy_user_session_path, class: 'ui positive button' ) %>
+								</div>
+							<% end %>
 						</li>
 					</ul>
 				</div>
