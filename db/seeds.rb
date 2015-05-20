@@ -6,26 +6,69 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Course.delete_all
+Enrollment.delete_all
+User.delete_all
 
-5.times do |n|
-    name  = "Web Development Immersive"
-    price = "9000"
-    description = "Everything you need to know to be become a professional web developer and launch your own start-up"
-    Course.create!(name: name,
-  	      price: price,
-  	      description: description
-  	     )
-    x = ["|","/","-","+","#"]
+User.create!(
+  first_name: "David",
+  last_name: "Banner",
+  email: "Bannerd@bitmakerlabs.com",
+  password: 'password',
+  password_confirmation: 'password',
+  role: "admin"
+)
+
+50.times do
+  User.create!(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    email: Faker::Internet.email,
+    password: 'password',
+    password_confirmation: 'password',
+    role: "student"
+  )
+  print '|'
+end
+
+3.times do
+  User.create!(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    email: Faker::Internet.email,
+    password: 'password',
+    password_confirmation: 'password',
+    role: "instructor"
+  )
+  print '|'
+end
+
+puts
+puts "Users seeded."
+
+name  = "Web Development Immersive"
+price = "9000"
+description = "Everything you need to know to be become a professional web developer and launch your own start-up"
+x = ["|","/","-","+","#"]
+
+5.times do
+    Course.create!(
+      name: name,
+      price: price,
+      description: description
+  	)
     print x.shuffle.sample
 end
 puts "Course Seed Complete"
 
-20.times do |n|
-    course = rand(1...5)
-    user = 1
-    Enrollment.create!(course_id: course,
-      user_id: user
-      )
+courses = Course.all
+students = User.where(role: "student")
+
+60.times do
+    Enrollment.create!(
+      course_id: courses.sample.id,
+      user_id: students.sample.id
+    )
     x = ["|","/","-","+","#"]
     print x.shuffle.sample
 end
