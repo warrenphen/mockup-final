@@ -1,0 +1,9 @@
+<%= form_for @registers do |f| %>
+	<% if @registers.errors.any? %>
+		<div class="error_messages">
+      <h2>Form is invalid</h2>
+    </div>
+
+	<% end %>
+
+<% end %>
