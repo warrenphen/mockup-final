@@ -56,7 +56,7 @@
 									<div class="ui buttons">
 		  						<%= link_to('Profile', tracks_path, class: 'ui primary button' ) %>
 		  							<div class="or" style="top: 12px;"></div>
-		  						<%= link_to('Sign Out', destroy_user_session_path, class: 'ui positive button' ) %>
+		  						<%= link_to('Sign Out', destroy_user_session_path, :method => :delete, class: 'ui positive button' ) %>
 								</div>
 							<% end %>
 						</li>
