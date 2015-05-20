@@ -206,3 +206,23 @@
   float: right;
 
 }
+
+
+.landing-page {
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 25%;
+  text-align: center;
+  vertical-align: ;
+}
+
+.huge-text {
+  font-size: 80px;
+  color: white;
+}
+
+
+
