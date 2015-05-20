@@ -10,7 +10,9 @@
 	  There would be a video here if you had a better browser.
 	</video>
 
-	<h1 style="position: absolute; top: 150px; left: 350px; color: white; font-size: 475%;">Become a Developer.</h1>
+	<h1 style="position:absolute;top:200px;left:350px;color:white;font-size:475%;display:block;">
+			Become a Developer.
+	</h1>
 
 	<div style="position: absolute; top: 300px; left: 550px;">
 		<%= link_to('Explore Curriculum', courses_path, class: 'ui teal button' ) %>
@@ -20,8 +22,8 @@
 <!-- start navigation -->
 		<nav 	class="navbar navbar-default navbar-fixed-top templatemo-nav" role="navigation">
 			<div class="container">
-				<div class="navbar-header">
-					<button class="navbar-toggle text-center" data-toggle="collapse" data-target=".navbar-collapse">
+				<div class="navbar-header" style="color: black;">
+					<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 						<span class="icon icon-bar"></span>
 						<span class="icon icon-bar"></span>
 						<span class="icon icon-bar"></span>
@@ -33,7 +35,7 @@
 						<li><a href="#home">Home</a></li>
 						<li><a href="#feature">About Us</a></li>
 						<li><a href="#contact">Contact</a></li>
-						<li class="pull-right">
+						<li>
 							<div class="ui buttons">
 	  						<%= link_to('Log In', new_user_session_path, class: 'ui primary button' ) %>
 	  						<div class="or" style="top: 12px;"></div>
