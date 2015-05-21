@@ -1,8 +1,9 @@
-class CreateLessonCompletes < ActiveRecord::Migration
+class CreateSteps < ActiveRecord::Migration
   def change
-    create_table :lesson_completes do |t|
+    create_table :steps do |t|
       t.integer :lesson_id
       t.integer :user_id
+      t.boolean :completed
 
       t.timestamps null: false
     end
