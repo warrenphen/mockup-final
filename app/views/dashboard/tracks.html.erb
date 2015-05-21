@@ -24,11 +24,14 @@ function initChat(authData) {
   var chat = new FirechatUI(chatRef, document.getElementById('firechat-wrapper'));
   chat.setUser(authData.uid, authData[authData.provider].displayName);
 }
+$(function() {
+    $("#dialog").dialog();
+});
 </script>
-
-<div id='firechat-wrapper'></div>
-
-<a href='#' onclick='login();'>Login with Twitter</a>
+<div id="dialog">
+  <div id='firechat-wrapper'></div>
+</div>
+<a href='#' onclick='login();' class="ui button">Login with Twitter</a>
 
 <div class="pusher">
   <div class="ui grid">
