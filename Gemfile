@@ -47,5 +47,13 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  #Factory-girl from ThoughtBot
+  gem 'factory_girl_rails'
+
+  # Tired of waiting for the test environment to load
+  gem 'guard'
+  gem 'guard-minitest'
+
 end
 
