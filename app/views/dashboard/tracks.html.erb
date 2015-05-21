@@ -1,4 +1,35 @@
 <%= render 'left_sidebar' %>
+<script>
+// Create a new Firebase reference, and a new instance of the Login client
+var chatRef = new Firebase('https://intense-torch-861.firebaseio.com/chat');
+
+function login() {
+  chatRef.authWithOAuthPopup("twitter", function(error, authData) {
+    if (error) {
+      console.log(error);
+    }
+  });
+}
+
+chatRef.onAuth(function(authData) {
+  // Once authenticated, instantiate Firechat with our user id and user name
+  if (authData) {
+    initChat(authData);
+  }
+});
+</script>
+
+<script>
+function initChat(authData) {
+  var chat = new FirechatUI(chatRef, document.getElementById('firechat-wrapper'));
+  chat.setUser(authData.uid, authData[authData.provider].displayName);
+}
+</script>
+
+<div id='firechat-wrapper'></div>
+
+<a href='#' onclick='login();'>Login with Twitter</a>
+
 <div class="pusher">
   <div class="ui grid">
     <div class="two wide column"></div>
