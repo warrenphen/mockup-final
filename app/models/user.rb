@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :enrollments
   has_many :courses, through: :enrollments
-  has_many :lessons, through: :courses
+  has_many :steps
+  has_many :steps, through: :lessons
 
 end
