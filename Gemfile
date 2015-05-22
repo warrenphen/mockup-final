@@ -59,5 +59,7 @@ group :development, :test do
   gem 'guard'
   gem 'guard-minitest'
 
+  gem 'rb-fsevent', '~> 0.9.4'
+
 end
 

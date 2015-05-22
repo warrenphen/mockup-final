@@ -5,24 +5,25 @@ class CoursesControllerTest < ActionController::TestCase
   #   @course = courses(:one)
   # end
 
-  # test "should get index" do
-  #   get :index
-  #   assert_response :success
-  #   assert_not_nil assigns(:courses)
-  # end
+  test "should get index" do
+    get :index
+    assert_response :success
+    assert_not_nil assigns(:courses)
+  end
 
-  # test "should get new" do
-  #   get :new
-  #   assert_response :success
-  # end
+  test "should get new" do
+    get :new
+    assert_response :success
+    assert_not_nil build_stubbed(:course)
+  end
 
-  # test "should create course" do
-  #   assert_difference('Course.count') do
-  #     post :create, course: { description: @course.description, name: @course.name, price: @course.price }
-  #   end
+  test "should create course" do
+    assert_difference('Course.count') do
+      post :create, course: attributes_for(:course)
+    end
 
-  #   assert_redirected_to course_path(assigns(:course))
-  # end
+    assert_redirected_to course_path(assigns(:course))
+  end
 
   test "shouldn't create course if price is negative" do
       assert_no_difference('Course.count') do

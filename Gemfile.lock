@@ -235,6 +235,7 @@ DEPENDENCIES
   jquery-rails
   pry-rails
   rails (= 4.2.1)
+  rb-fsevent (~> 0.9.4)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   semantic-ui-sass!
