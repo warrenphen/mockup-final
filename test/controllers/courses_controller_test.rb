@@ -1,9 +1,9 @@
 require 'test_helper'
 
 class CoursesControllerTest < ActionController::TestCase
-  # setup do
-  #   @course = courses(:one)
-  # end
+  setup do
+    @course = create(:course)
+  end
 
   test "should get index" do
     get :index
@@ -14,7 +14,7 @@ class CoursesControllerTest < ActionController::TestCase
   test "should get new" do
     get :new
     assert_response :success
-    assert_not_nil build_stubbed(:course)
+    assert_not_nil assigns(:course)
   end
 
   test "should create course" do
@@ -32,15 +32,15 @@ class CoursesControllerTest < ActionController::TestCase
       assert_template :new
   end
 
-  # test "should show course" do
-  #   get :show, id: @course
-  #   assert_response :success
-  # end
+  test "should show course" do
+    get :show, id: @course.id
+    assert_response :success
+  end
 
-  # test "should get edit" do
-  #   get :edit, id: @course
-  #   assert_response :success
-  # end
+  test "should get edit" do
+    get :edit, id: @course
+    assert_response :success
+  end
 
   # test "should update course" do
   #   patch :update, id: @course, course: { description: @course.description, name: @course.name, price: @course.price }
