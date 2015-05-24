@@ -24,15 +24,14 @@ class LessonsController < ApplicationController
   # POST /lessons
   # POST /lessons.json
   def create
-    @lesson = Lesson.new(lesson_params)
+    @course = load_course
+    @lessons = @course.lessons.build(course_params)
 
     respond_to do |format|
       if @lesson.save
-        format.html { redirect_to @lesson, notice: 'Lesson was successfully created.' }
-        format.json { render :show, status: :created, location: @lesson }
+        format.html { redirect_to lesson_path(@course.id), notice: 'Lesson was successfully created.' }
       else
         format.html { render :new }
-        format.json { render json: @lesson.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -43,10 +42,8 @@ class LessonsController < ApplicationController
     respond_to do |format|
       if @lesson.update(lesson_params)
         format.html { redirect_to @lesson, notice: 'Lesson was successfully updated.' }
-        format.json { render :show, status: :ok, location: @lesson }
       else
         format.html { render :edit }
-        format.json { render json: @lesson.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -57,7 +54,6 @@ class LessonsController < ApplicationController
     @lesson.destroy
     respond_to do |format|
       format.html { redirect_to lessons_url, notice: 'Lesson was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
@@ -70,5 +66,9 @@ class LessonsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_params
       params.require(:lesson).permit(:name, :description, :course_id)
+    end
+
+    def load_course
+      @course = Course.find(params[:product_id])
     end
 end
