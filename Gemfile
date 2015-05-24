@@ -34,6 +34,9 @@ gem 'faker'
 
 gem 'font-awesome-rails'
 
+# redcarpet gem to parse markdown
+gem 'redcarpet'
+
 
 # Use Unicorn as the app server
 # gem 'unicorn'
