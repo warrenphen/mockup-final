@@ -33,7 +33,7 @@ class CoursesControllerTest < ActionController::TestCase
   end
 
   test "should show course" do
-    get :show, id: @course.id
+    get :show, id: @course
     assert_response :success
   end
 
@@ -42,16 +42,16 @@ class CoursesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  # test "should update course" do
-  #   patch :update, id: @course, course: { description: @course.description, name: @course.name, price: @course.price }
-  #   assert_redirected_to course_path(assigns(:course))
-  # end
+  test "should update course" do
+    patch :update, id: @course, course: attributes_for(:course)
+    assert_redirected_to course_path(assigns(:course))
+  end
 
-  # test "should destroy course" do
-  #   assert_difference('Course.count', -1) do
-  #     delete :destroy, id: @course
-  #   end
+  test "should destroy course" do
+    assert_difference('Course.count', -1) do
+      delete :destroy, id: @course
+    end
 
-  #   assert_redirected_to courses_path
-  # end
+    assert_redirected_to courses_path
+  end
 end
