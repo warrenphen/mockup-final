@@ -13,11 +13,6 @@
   <%= @course.description %>
 </p>
 
-<%= button_to 'Register Now',
-        course_enrollments_path(@course),
-        :method => 'post',
-        class: "btn btn-default" %><br>
-
 <!-- Admin has full access to editing function -->
 <!-- Instructor can edit course title and description, but not price -->
 <!-- Student does not have edit priviledge -->

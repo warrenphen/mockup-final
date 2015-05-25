@@ -1,4 +1,3 @@
-<%= render 'left_sidebar' %>
 <script>
 // Create a new Firebase reference, and a new instance of the Login client
 var chatRef = new Firebase('https://intense-torch-861.firebaseio.com/chat');
@@ -28,15 +27,15 @@ $(function() {
     $("#dialog").dialog();
 });
 </script>
-<div id="dialog">
-  <div id='firechat-wrapper'></div>
-</div>
-<a href='#' onclick='login();' class="ui button">Login with Twitter</a>
+
+
+
+<%= render 'left_sidebar' %>
 
 <div class="pusher">
   <div class="ui grid">
-    <div class="two wide column"></div>
-    <div class="twelve wide column">
+    <div class="two wide column sticky top"></div>
+    <div class="nine wide column main container">
     <div class="ui piled segment" style="margin-top: 40px;">
       <div class="ui fluid card">
           <div class="image">
@@ -331,7 +330,11 @@ $(function() {
       </div>
   </div>
 
-  <div class="two wide column"></div>
+  <div class="five wide column fixed top center aligned">
+    <br><br>
+    <h1>Chat Section</h1>
+    <div id='firechat-wrapper'></div>    
+  </div>
 
 </div>
 </div>
