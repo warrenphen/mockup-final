@@ -13,10 +13,7 @@
   <%= @course.description %>
 </p>
 
-<%= button_to 'Register Now', 
-        course_enrollments_path(@course), 
-        :method => 'post',
-        class: "btn btn-default" %><br>
+
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>
 

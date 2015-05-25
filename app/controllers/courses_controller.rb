@@ -7,7 +7,7 @@ class CoursesController < ApplicationController
     @course = Course.find(params[:id])
 
     if current_user
-      @review = @course.reviews.build
+      @lesson = @course.lessons.build
     end
   end
 
