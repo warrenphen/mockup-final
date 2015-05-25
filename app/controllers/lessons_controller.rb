@@ -1,5 +1,5 @@
 class LessonsController < ApplicationController
- before_filter :ensure_logged_in, only: [:create, :destroy]
+ # before_filter :ensure_logged_in, only: [:create, :destroy]
 
   def show 
     @course = load_course
@@ -14,7 +14,6 @@ class LessonsController < ApplicationController
   def create
     @course = load_course
     @lesson = @course.lessons.build(lesson_params)
-    @lesson.user = current_user
 
     respond_to do |format|
       if @lesson.save

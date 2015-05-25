@@ -2,8 +2,8 @@
 // Create a new Firebase reference, and a new instance of the Login client
 var chatRef = new Firebase('https://intense-torch-861.firebaseio.com/chat');
 
-function login() {
-  chatRef.authWithOAuthPopup("twitter", function(error, authData) {
+function login(provider) {
+  chatRef.authWithOAuthPopup(provider, function(error, authData) {
     if (error) {
       console.log(error);
     }
@@ -24,7 +24,9 @@ function initChat(authData) {
   chat.setUser(authData.uid, authData[authData.provider].displayName);
 }
 $(function() {
-    $("#dialog").dialog();
+    $("#login-firechat").on('click', function(){
+      $('#login-firechat').hide();
+    })
 });
 </script>
 
@@ -332,12 +334,16 @@ $(function() {
 
   <div class="five wide column fixed top center aligned">
     <br><br>
-    <h1>Chat Section</h1>
+    <h1><i class="chat icon"></i>Chat Section</h1>
     <div id='firechat-wrapper'></div>    
+    <h3>Choose from the options below</h3>
+    <a class="item ui button" id="login-firechat" onclick='login("twitter");'>Twitter</a>
+    <a class="item ui button" id="login-firechat" onclick='login("google");'>Google</a>
   </div>
 
 </div>
 </div>
+
 
 
 
