@@ -9,6 +9,7 @@ class MarkdownsController < ApplicationController
 
     # render method called
     # rendering html returned from markdown.render
-    render html: markdown.render(page) #(File.join(Rails.root, 'lib', 'curriculum', "#{params[:page_id]}.md"))
+    # render html: markdown.render(page).html_safe #(File.join(Rails.root, 'lib', 'curriculum', "#{params[:page_id]}.md"))
+    @markdown_to_html = markdown.render(page).html_safe
   end
 end
