@@ -64,6 +64,6 @@ class LessonsController < ApplicationController
     end
 
     def load_course
-      @course = Course.find(params[:product_id])
+      @course = Course.find(params[:course_id])
     end
 end
