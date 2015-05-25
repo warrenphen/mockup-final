@@ -22,7 +22,7 @@ class LessonsController < ApplicationController
   # POST /lessons
   def create
     @course = load_course
-    @lessons = @course.lessons.build(course_params)
+    @lessons = @course.lessons.build(lesson_params)
 
     respond_to do |format|
       if @lesson.save

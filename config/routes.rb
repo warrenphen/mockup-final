@@ -4,8 +4,9 @@ Rails.application.routes.draw do
 
   resources :courses do
   	resources :enrollments
-  	resources :lessons
 	end
+
+	resources :lessons
 
   root :to => "dashboard#front"
 
