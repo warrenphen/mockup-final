@@ -2,13 +2,11 @@ class LessonsController < ApplicationController
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
 
   # GET /lessons
-  # GET /lessons.json
   def index
     @lessons = Lesson.all
   end
 
   # GET /lessons/1
-  # GET /lessons/1.json
   def show
   end
 
@@ -22,7 +20,6 @@ class LessonsController < ApplicationController
   end
 
   # POST /lessons
-  # POST /lessons.json
   def create
     @course = load_course
     @lessons = @course.lessons.build(course_params)
@@ -37,7 +34,6 @@ class LessonsController < ApplicationController
   end
 
   # PATCH/PUT /lessons/1
-  # PATCH/PUT /lessons/1.json
   def update
     respond_to do |format|
       if @lesson.update(lesson_params)
@@ -49,7 +45,6 @@ class LessonsController < ApplicationController
   end
 
   # DELETE /lessons/1
-  # DELETE /lessons/1.json
   def destroy
     @lesson.destroy
     respond_to do |format|
