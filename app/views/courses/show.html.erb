@@ -14,7 +14,7 @@
 </p>
 
 <%= button_to 'Register Now', 
-        course_enrollments_path(@course), 
+        course_path(@course), 
         :method => 'post',
         class: "btn btn-default" %><br>
 <%= link_to 'Edit', edit_course_path(@course) %> |
