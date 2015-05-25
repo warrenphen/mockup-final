@@ -13,6 +13,24 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require semantic-ui
 //= require_tree .
 // Loads all Semantic javascripts
-//= require semantic-ui
+
+(function ($) {
+  $(document).ready(function(){
+  	//hide .navbar first
+  	//$("#navibar").hide();
+  	//fade in .navbar
+  	// $(function () {
+   //  	$(window).scroll(function () {
+   //    // set distance user needs to scroll before we fadeIn navbar
+   //    	if ($(this).scrollTop() > 600) {
+   //      	$('.navbar').show();
+   //    	} else {
+   //      	$('.navbar').fadeOut();
+   //    	}
+   //  	});
+  	// });
+	});
+}(jQuery));
